@@ -6,7 +6,6 @@ This repository contains the code for the BBI optimizer, introduced in the paper
 
 Project Plan:
 - Compare to other optimizers that didn’t appear in the article for noise and noise-free setting.
-- Compare on time scale.
 - Try other highly-nonconvex functions.
 - More experiments with shallow valleys.
 - Another datasets and NN architecture(increasing number of layers and width) => Draw to compare.
