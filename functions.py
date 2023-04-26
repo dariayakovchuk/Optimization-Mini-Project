@@ -9,7 +9,7 @@ def rosenbrock(x):
 
     Returns:
         f : function value
-        df : partial derivatives wrt x_i
+        df : partial derivatives wrt x(i)
     """
     D = len(x)
     f = torch.sum( 100 * torch.pow((x[1:D] - torch.pow(x[:D-1], 2)),2) + torch.pow(torch.ones(D-1) - x[:D-1], 2))
@@ -19,6 +19,21 @@ def rosenbrock(x):
     df[1:D] += 200 * (x[1:D] - torch.pow(x[:D-1],2))
 
     return f, df
+
+def rastrigin(x, A=10):
+    """
+    f(x) = 10*D + sum_{i=1:D} (x(i)^2 - 10 * cos(2*pi*x(i))
+    The true minimum of the function is 0 at x = (0 0 ... 0)
+
+    Returns:
+        f : function value
+        df : partial derivatives wrt x(i)
+    """
+    D = len(x)
+    f = A * D + torch.sum(torch.pow(x, 2) - A * torch.cos(2 * np.pi * x))
+    df = 2 * x + 2 * A * np.pi * torch.sin(2 * np.pi * x)
+    return f, df
+    
 
 def sgd_optimizer(x0, func, iterations = 1000, lr=0.0001, momentum=.95,):
     """
