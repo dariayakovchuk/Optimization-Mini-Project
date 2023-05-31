@@ -1,6 +1,9 @@
 import torch
 import numpy as np
+from mup import MuAdam
+
 from inflation import BBI
+
 
 def rosenbrock(x):
     """
@@ -19,6 +22,7 @@ def rosenbrock(x):
     df[1:D] += 200 * (x[1:D] - torch.pow(x[:D-1],2))
 
     return f, df
+
 
 def rastrigin(x, A=10):
     """
@@ -107,3 +111,10 @@ def BBI_optimizer(x0, func, iterations = 1000, lr=0.0001, threshold0=50, thresho
         optimizer.step(closure)
         xslist.append(xs.tolist())
     return xs_best, xslist, trajectory
+
+
+def MuBBI(params, **kwargs):
+    '''
+    BBI µP optimizer
+    '''
+    return MuAdam(params, impl=BBI, **kwargs)
