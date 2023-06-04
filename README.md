@@ -4,8 +4,9 @@ This repository contains the code for the BBI optimizer, introduced in the paper
 Project organization:
 ### Project structure
 - The BBI optimizer is implemented in the file `inflation.py` is based on https://github.com/gbdl/BBI by G. Bruno De Luca and Eva Silverstein, available under the license.
-- Notebook `comp_optimizers.ipynb` contains comparison of different optimizers including modifications of BBI.
-- Highly_convex_functions_experiment.ipynb contains 
+- `comp_optimizers.ipynb` - comparison of different optimizers including modifications of BBI.
+- `highly_convex_functions_experiment.ipynb` - experiments with highly-nonconvex function (Rastrigin Function).
+- ``
 
 Project Plan:
 - Compare to other optimizers that didn’t appear in the article for noise and noise-free setting.
