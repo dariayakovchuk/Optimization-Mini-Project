@@ -5,7 +5,7 @@ This project aims to expand knowledge about experimental behavior of the BBI opt
 ### Project structure
 - The BBI optimizer is implemented in the file `inflation.py` is based on https://github.com/gbdl/BBI by G. Bruno De Luca and Eva Silverstein, available under the license.
 - `comp_optimizers.ipynb` - comparison of different optimizers including modifications of BBI.
-- `highly_convex_functions_experiment.ipynb` - experiments with highly-nonconvex function (Rastrigin Function).
+- `highly_nonconvex_functions_experiment.ipynb` - experiments with highly-nonconvex function (Rastrigin Function).
 - `valley_shaped_experiments.ipynb` - experiments with shallow vallezs (Rosenbrock Function).
 - `functions.py` - helper functions for experiments.
 - `different_architectures_experiments.ipynb` - comparison optimizers increasing number of layers of network.
